@@ -15,7 +15,6 @@ class ItemAddForm extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    // щоб браузер не перезагружав сторінку при додаванні ітему (відправкою форми);
     const { label } = this.state;
     this.setState({ label: "" });
     const cb = this.props.onItemAdded || (() => {});
@@ -31,12 +30,11 @@ class ItemAddForm extends Component {
           autoComplete="off"
           className="form-control new-todo-label"
           value={this.state.label}
-          // !! для того щоб зробити елемент контролюємим, нам потрібно 
-          // !! щоб значення елемента встановлювалось із стейту компоненту
           onChange={this.onLabelChange}
-          placeholder="What needs to be done?" 
-          required 
-          tabIndex={1} />
+          placeholder="What needs to be done?"
+          required
+          tabIndex={1}
+        />
         <button type="submit" className="btn btn-secondary" tabIndex={2}>
           Add
         </button>

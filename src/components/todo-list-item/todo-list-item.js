@@ -3,46 +3,8 @@ import React, { Component } from "react";
 import "./todo-list-item.css";
 
 class TodoListItem extends Component {
-  // state = {
-  //   done: false,
-  //   important: false,
-  // };
-  // // стан зберігається у полі "state";
-  // // "this.state" ініціалізується в конструкторі, або тілі класу;
-  // // після ініціалізації "state" міняти напряму не можна!;
-  // // щоб оновити значення "state" використовуємо "setState()"!;
-  // // якщо залежить від попер. стану, то в "setState()" передаєм ф-ю,
-  // // з аргументом --> поточним "state"!;
-
-  // onLableClick = () => {
-  //   this.setState(({ done }) => {
-  //     // деструктуризація;
-  //     return {
-  //       done: !done,
-  //     };
-  //   });
-  // };
-  // // constructor() {
-  // //   super();
-  // //   this.onLableClick = () => {
-  // //     console.log(`${this.props.label}`);
-  // //   };
-  // // }
-  // // ф-я вище працює аналогічно конструктору в класі;
-
-  // onMarkImportant = () => {
-  //   this.setState((state) => {
-  //     // без деструктуризації;
-  //     return {
-  //       important: !state.important,
-  //     };
-  //   });
-  // };
-  // // "setState" міняє лише ту частину стейту, яка передається!;
-
   render() {
-    const { label, onDeleted, onToggleImportant, onToogleDone, important, done} = this.props;
-    // const { done, important } = this.state;
+    const { label, onDeleted, onToggleImportant, onToogleDone, important, done, } = this.props;
 
     let classNames = "todo-list-item";
     if (important) {
@@ -52,7 +14,6 @@ class TodoListItem extends Component {
     if (done) {
       classNames += " done";
     }
-
 
     return (
       <span className={classNames}>
@@ -79,8 +40,8 @@ class TodoListItem extends Component {
         <button
           type="button"
           className="btn btn-outline-danger btn-sm float-right"
-          onClick={onDeleted}>
-          {/* передаємо "наверх" step B */}
+          onClick={onDeleted}
+        >
           <i className="fa fa-trash-o" />
         </button>
       </span>

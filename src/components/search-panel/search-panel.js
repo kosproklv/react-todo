@@ -4,14 +4,14 @@ import "./search-panel.css";
 
 class SearchPanel extends Component {
   state = {
-    term: ''
-  }
+    term: "",
+  };
 
   onSearchChange = (e) => {
     const term = e.target.value;
-    this.setState({term});
+    this.setState({ term });
     this.props.onSearchChange(term);
-  }
+  };
 
   render() {
     return (
@@ -24,6 +24,6 @@ class SearchPanel extends Component {
       />
     );
   }
-};
+}
 
 export default SearchPanel;

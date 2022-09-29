@@ -10,17 +10,24 @@ class ItemStatusFilter extends Component {
   ];
 
   render() {
-    const {filter, onFilterChange} = this.props;
-    
+    const { filter, onFilterChange } = this.props;
+
     const buttons = this.buttons.map(({ name, label }) => {
       const isActive = filter === name;
-      const clazz = isActive ? 'btn-info' : 'btn-outline-light';
+      const clazz = isActive ? "btn-info" : "btn-outline-light";
+
       return (
-        <button type="button" className={`btn ${clazz}`} key={name} onClick={() => onFilterChange(name)} >
+        <button
+          type="button"
+          className={`btn ${clazz}`}
+          key={name}
+          onClick={() => onFilterChange(name)}
+        >
           {label}
         </button>
       );
     });
+
     return <div className="btn-group">{buttons}</div>;
   }
 }
